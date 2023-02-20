@@ -4,24 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/title_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="What is your name?"
-        android:padding="16dp"/>
+        android:textSize="20dp"
+        android:textAlignment="center"/>
 
     <LinearLayout
+        android:id="@+id/linearlayout_first"
+        android:layout_below="@id/title_name"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         >
+
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="First:"
-            />
+            android:layout_weight="0"/>
+
+        <EditText
+            android:id="@+id/first_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_middle"
+        android:layout_below="@id/linearlayout_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Middle:"
+            android:layout_weight="0"/>
+
+        <EditText
+            android:id="@+id/middle_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_last"
+        android:layout_below="@id/linearlayout_middle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last:"
+            android:layout_weight="0"/>
+
+        <EditText
+            android:id="@+id/last_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/button_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearlayout_last"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="50dp"
+        android:text="Take a Profile Picture"
+        android:layout_centerHorizontal="true"/>
+    
+    <ImageView
+        android:id="@+id/image"
+        android:saveEnabled="false"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/button_camera"
+        />
+
+    <Button
+        android:id="@+id/button_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:text="Submit"/>
+    
 </RelativeLayout>
