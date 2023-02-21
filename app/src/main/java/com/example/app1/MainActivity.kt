@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var cameraButton: Button? = null
     private var profilePicture: ImageView? = null
-    private var isPicTaken = false
 
     private var submitButton: Button? = null
 
@@ -108,7 +107,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 firstName = firstEdit!!.text.toString()
                 middleName = middleEdit!!.text.toString()
                 lastName = lastEdit!!.text.toString()
-                if (firstName == "" || middleName == "" || lastName =="" || !isPicTaken) {
+                if (firstName == "" || middleName == "" || lastName =="" || imagePath == null) {
                     Toast.makeText(this@MainActivity, "All fields are required", Toast.LENGTH_SHORT).show()
                     return
                 }
@@ -136,7 +135,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val path = saveImage(image)
                 imagePath = path
             }
-            isPicTaken = true
         }
     }
 
